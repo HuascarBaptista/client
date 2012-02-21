@@ -1,0 +1,26 @@
+<h1>Busqueda de eventos por 7 dias despues de la fecha</h1>
+
+<table>
+  <tr>
+    <th>Nombre</th>
+    <th>Descripcion</th>
+    <th>Fecha</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+  
+
+
+<% @events.each do |evento| %>
+<% eventos=ActiveSupport::JSON.decode(evento.to_json)%>
+  <tr>
+  
+    <td><%= eventos["nombre"].to_s %></td>
+    <td><%= eventos["descripcion"].to_s %></td>
+    <td><%= eventos["fecha"].to_s %></td>
+    
+  </tr>
+<% end %>
+</table>
+

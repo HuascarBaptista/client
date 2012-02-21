@@ -9,6 +9,22 @@
 <body>
 
 <%= yield %>
+<footer>
 
+<br />
+	Filtros de Busqueda
+<br />
+
+<%= link_to '7 dias a partir de fecha', :controller => "eventos", :action => "dias"%>
+<%= link_to 'Semana #',  :controller => "eventos", :action => "semanas"%>
+<%= link_to 'Dia #',  :controller => "eventos", :action => "diaa" %>
+<%= link_to 'Mes #', :controller => "eventos", :action => "mess"%>
+<br />
+<br />
+<br />
+
+<%= link_to 'Inicio', eventos_path %> <%= link_to 'Agregar Evento', new_evento_path %> <%= link_to 'Colaboradores', :controller => "eventos", :action => "colaboradores"%>  <%= link_to 'Volver', :back %>
+<br />
+</footer>
 </body>
 </html>

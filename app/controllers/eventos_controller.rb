@@ -46,7 +46,7 @@ class EventosController < ApplicationController
 
     respond_to do |format|
       if @evento.save
-        format.html { redirect_to @evento, notice: 'Evento was successfully created.' }
+        format.html { redirect_to @evento, notice: 'Evento fue creado con exito.' }
         format.json { render json: @evento, status: :created, location: @evento }
       else
         format.html { render action: "new" }
@@ -62,7 +62,7 @@ class EventosController < ApplicationController
 
     respond_to do |format|
       if @evento.update_attributes(params[:evento])
-        format.html { redirect_to @evento, notice: 'Evento was successfully updated.' }
+        format.html { redirect_to @evento, notice: 'Evento fue modificado con exito.' }
         format.json { head :ok }
       else
         format.html { render action: "edit" }
@@ -71,6 +71,41 @@ class EventosController < ApplicationController
     end
   end
 
+  def mes
+  @events= Evento.get(:mes,:id => params[:id])
+  
+  respond_to do |format|
+		format.html # new.html.erb
+		format.json  { render :json => @events }
+	end
+  
+  end
+  def semana
+  
+	@events = Evento.get(:semana,:id => params[:id])
+	respond_to do |format|
+		format.html # new.html.erb
+		format.json  { render :json => @events }
+	end
+	
+  end
+  def dia
+  
+	@events = Evento.get(:dia,:id => params[:id])
+	respond_to do |format|
+		format.html # new.html.erb
+		format.json  { render :json => @events }
+	end
+	
+  end
+  def dias
+  
+	@events = Evento.get(:dias)
+	respond_to do |format|
+		format.html # new.html.erb
+		format.json  { render :json => @events }
+	end
+	end
   # DELETE /eventos/1
   # DELETE /eventos/1.json
   def destroy
@@ -82,4 +117,32 @@ class EventosController < ApplicationController
       format.json { head :ok }
     end
   end
+  def mess
+  
+	respond_to do |format|
+		format.html # new.html.erb
+		format.json  { render :json => @events }
+	end
+	end
+	def diaa
+  
+	respond_to do |format|
+		format.html # new.html.erb
+		format.json  { render :json => @events }
+	end
+	end
+	def semanas
+  
+	respond_to do |format|
+		format.html # new.html.erb
+		format.json  { render :json => @events }
+	end
+	end
+	def colaboradores
+  
+	respond_to do |format|
+		format.html # new.html.erb
+		format.json  { render :json => @events }
+	end
+	end
 end
